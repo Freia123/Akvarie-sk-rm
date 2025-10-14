@@ -1,6 +1,5 @@
 // Grøn kommentar: Logger til konsollen at JavaScript-filen kører
 console.log("js kører fedt nok")
-
 // Grøn kommentar: Indeholder data for hver række af fisk: hvilken retning de svømmer og hvilke billeder, der skal bruges
 let fiskerækker = [
 {
@@ -29,7 +28,6 @@ let output = "";
 for (let fiskerække of fiskerækker) {
 output += `<div class="fiskeRække ${fiskerække.retning}">`;
 for (let fisk of fiskerække.fisk) {
-    
 // Grøn kommentar: Hvis retning er fraVenstre, tilføj klassen 'flip', så fisken spejlvendes
 const flipClass = fiskerække.retning === 'fraVenstre' ? 'flip' : '';
 output += `

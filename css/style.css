@@ -85,7 +85,7 @@ p{
 
 /* Gør knapperne i containerKnap mindre */
 .containerKnap {
-    position: fixed;
+    position: absolute;
     left: 49%;
     top: 50%;
     transform: translate(-50%, -50%);

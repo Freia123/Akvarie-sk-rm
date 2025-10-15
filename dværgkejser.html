@@ -13,14 +13,15 @@
 <main id="Dværgkejser">
 <section class="dværgkejser1">
 
-<div class="tekst1">
-<h2>Dværgkejser</h2>
-<p>Den dværgkejser, også kendt som den lille kejserfisk, er en farverig og livlig fisk, der ofte findes i koralrev. Den er kendt for sine strålende blå og gule farver samt sin lille størrelse, hvilket gør den til en populær tilføjelse til mange akvarier. Dværgkejseren er en fredelig fisk, der trives bedst i grupper og har brug for masser af skjulesteder blandt koraller og sten. Den spiser primært alger og små hvirvelløse dyr, hvilket hjælper med at holde akvariet rent. På trods af sin lille størrelse har dværgkejseren en stor personlighed og kan være meget interaktiv med sine ejere.</p>
+
+<div class="tekst1" id="fiskeInfoContainer">
+<!-- Info om fisken indsættes her med JavaScript -->
 </div>
 
 <div class="billede1">
 <img src="images/Dværgkejser.png" alt="Dværgkejser">
 </div>
+
 
 <div class="billede2">
 <img src="images/Dykker med bobbel.png" alt="Dykker med bobbel">
@@ -30,4 +31,20 @@
 
 </main>
 </body>
+<script src="js/fisksvømmer.js"></script>
+<script>
+// Find fisken i objektet og vis info
+const navn = "Dværgkejser";
+const info = fisk.find(f => f.navn === navn);
+if (info) {
+document.getElementById('fiskeInfoContainer').innerHTML = `
+<h2>${info.navn}</h2>
+<p><b>Størrelse:</b> ${info.storrelse}</p>
+<p><b>Farve:</b> ${info.farve}</p>
+<p><b>Bosted:</b> ${info.bosted}</p>
+<p><b>Mad:</b> ${info.mad}</p>
+<p><b>Fun fact:</b> ${info.fun_fact}</p>
+`;
+}
+</script>
 </html>

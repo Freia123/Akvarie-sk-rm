@@ -13,10 +13,7 @@
 <main id="orangeplettetKirurg">
 <section class="orangeplettetKirurg1">
 
-<div class="tekst1">
-<h2>Orangeplettet kirurg</h2>
-<p>Klovnefisken er let at kende – den har en orange krop med hvide striber, som er omkranset af sorte kanter. Den ligner næsten en lille cirkusklovn, og det er faktisk derfor, den har fået sit navn!</p>
-</div>
+<div class="tekst1" id="fiskeInfoContainer"></div>
 
 <div class="billede1">
 <img src="images/Orangeplettet kirurg.png" alt="Orangeplettet kirurg">
@@ -30,4 +27,19 @@
 
 </main>
 </body>
+<script src="js/fisksvømmer.js"></script>
+<script>
+const navn = "Orangeplettet kirurg";
+const info = fisk.find(f => f.navn === navn);
+if (info) {
+document.getElementById('fiskeInfoContainer').innerHTML = `
+<h2>${info.navn}</h2>
+<p><b>Størrelse:</b> ${info.storrelse}</p>
+<p><b>Farve:</b> ${info.farve}</p>
+<p><b>Bosted:</b> ${info.bosted}</p>
+<p><b>Mad:</b> ${info.mad}</p>
+<p><b>Fun fact:</b> ${info.fun_fact}</p>
+`;
+}
+</script>
 </html>

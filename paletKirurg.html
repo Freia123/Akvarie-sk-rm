@@ -13,10 +13,7 @@
 <main id="paletKirurg">
 <section class="paletKirurg1">
 
-<div class="tekst1">
-<h2>Palet kirurg</h2>
-<p>Den har blå krop med sort mønster og en gul hale – som et levende maleri! Den er lidt glemsom, men altid venlig.</p>
-</div>
+<div class="tekst1" id="fiskeInfoContainer"></div>
 
 <div class="billede1">
 <img src="images/Palet kirurg.png" alt="Palet kirurg">
@@ -26,8 +23,24 @@
 <img src="images/Dykker med bobbel.png" alt="Dykker med bobbel">
 </div>
 
+
 </section>
 
 </main>
 </body>
+<script src="js/fisksvømmer.js"></script>
+<script>
+const navn = "Palet kirurg";
+const info = fisk.find(f => f.navn === navn);
+if (info) {
+document.getElementById('fiskeInfoContainer').innerHTML = `
+<h2>${info.navn}</h2>
+<p><b>Størrelse:</b> ${info.storrelse}</p>
+<p><b>Farve:</b> ${info.farve}</p>
+<p><b>Bosted:</b> ${info.bosted}</p>
+<p><b>Mad:</b> ${info.mad}</p>
+<p><b>Fun fact:</b> ${info.fun_fact}</p>
+`;
+}
+</script>
 </html>

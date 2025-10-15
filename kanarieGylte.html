@@ -13,10 +13,7 @@
 <main id="kanarieGylte">
 <section class="kanarieGylte1">
 
-<div class="tekst1">
-<h2>Kanarie gylte</h2>
-<p>Lysende gul som en lille kanariefugl, men den svømmer under vandet i stedet for at flyve.</p>
-</div>
+<div class="tekst1" id="fiskeInfoContainer"></div>
 
 <div class="billede1">
 <img src="images/Kanarie gylte.png" alt="Kanarie gylte">
@@ -26,8 +23,25 @@
 <img src="images/Dykker med bobbel.png" alt="Dykker med bobbel">
 </div>
 
+
+
 </section>
 
 </main>
 </body>
+<script src="js/fisksvømmer.js"></script>
+<script>
+const navn = "Kanarie gylte";
+const info = fisk.find(f => f.navn === navn);
+if (info) {
+document.getElementById('fiskeInfoContainer').innerHTML = `
+<h2>${info.navn}</h2>
+<p><b>Størrelse:</b> ${info.storrelse}</p>
+<p><b>Farve:</b> ${info.farve}</p>
+<p><b>Bosted:</b> ${info.bosted}</p>
+<p><b>Mad:</b> ${info.mad}</p>
+<p><b>Fun fact:</b> ${info.fun_fact}</p>
+`;
+}
+</script>
 </html>

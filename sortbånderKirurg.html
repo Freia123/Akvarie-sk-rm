@@ -13,21 +13,34 @@
 <main id="sortbåndetKirurg">
 <section class="sortbåndetKirurg1">
 
-<div class="tekst1">
-<h2>Sortbåndet kirurg</h2>
-<p>Har lange hvide, sorte og gule striber og en høj, elegant finne – som en flag-bærer i havet."</p>
-</div>
+<div class="tekst1" id="fiskeInfoContainer"></div>
 
 <div class="billede1">
-<img src="images/Sortbåndet kirurg.png" alt="Sortbåndet kirurg">
+<img src="images/Sortbåndet kirurg.png" alt="Sortbåndet kirurg">
 </div>
 
 <div class="billede2">
 <img src="images/Dykker med bobbel.png" alt="Dykker med bobbel">
 </div>
 
+
 </section>
 
 </main>
 </body>
+<script src="js/fisksvømmer.js"></script>
+<script>
+const navn = "Sortbåndet kirurg";
+const info = fisk.find(f => f.navn === navn);
+if (info) {
+document.getElementById('fiskeInfoContainer').innerHTML = `
+<h2>${info.navn}</h2>
+<p><b>Størrelse:</b> ${info.storrelse}</p>
+<p><b>Farve:</b> ${info.farve}</p>
+<p><b>Bosted:</b> ${info.bosted}</p>
+<p><b>Mad:</b> ${info.mad}</p>
+<p><b>Fun fact:</b> ${info.fun_fact}</p>
+`;
+}
+</script>
 </html>

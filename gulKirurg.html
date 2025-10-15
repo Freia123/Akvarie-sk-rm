@@ -13,10 +13,7 @@
 <main id="gulKirurg">
 <section class="gulKirurg1">
 
-<div class="tekst1">
-<h2>Gul kirurg</h2>
-<p>Hele fisken er gul som solen! Den svømmer ofte i store grupper, så det ligner en gul sky under vandet.</p>
-</div>
+<div class="tekst1" id="fiskeInfoContainer"></div>
 
 <div class="billede1">
 <img src="images/Gul kirurg.png" alt="Gul kirurg">
@@ -30,4 +27,19 @@
 
 </main>
 </body>
+<script src="js/fisksvømmer.js"></script>
+<script>
+const navn = "Gul kirurg";
+const info = fisk.find(f => f.navn === navn);
+if (info) {
+document.getElementById('fiskeInfoContainer').innerHTML = `
+<h2>${info.navn}</h2>
+<p><b>Størrelse:</b> ${info.storrelse}</p>
+<p><b>Farve:</b> ${info.farve}</p>
+<p><b>Bosted:</b> ${info.bosted}</p>
+<p><b>Mad:</b> ${info.mad}</p>
+<p><b>Fun fact:</b> ${info.fun_fact}</p>
+`;
+}
+</script>
 </html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiste</title>
+   <link rel="stylesheet" href="css/farvKiste.css">
+
+</head>
+<body>
+  <!-- Kiste + tekst -->
+  <div class="kiste-wrapper">
+    <span class="label">Tryk her</span>
+    <img src="images/lukketKiste.png"
+      alt="skattekiste"
+      class="kiste"
+      onclick="startgif()"
+       <img src="images/skattekiste_still.png" class="kiste still" onclick="startgif()">
+  
+
+
+
+<!-- Dykkermand + taleboble (starter skjult, glider ned ved succes) -->
+<div class="Dykkermand" id="diver">
+  <img src="images/dykkermand.png" alt="diver">
+  <div class="speech" id="speech">GODT KLARET</div>
+</div>
+  
+  <!-- Boble bagved -->
+  <div class="bobble-wrapper">
+    <img src="images/bobble.png" alt="bobble" class="bobble" />
+  </div>
+
+  <script>
+  function startgif() {
+    const kiste = document.querySelector('.kiste');
+    const label = document.querySelector('.label');
+
+  // Hvor lang tid din GIF ca. tager om at åbne kisten helt
+  const GIF_DURATION_MS = 1600; // justér hvis teksten/dykkeren kommer for tidligt/sent
+
+  function startgif() {
+    const kiste   = document.querySelector('.kiste');     // billedet i kiste-containeren
+    const label   = document.querySelector('.label');     // "Tryk her"
+    const success = document.getElementById('successText');
+    const diver   = document.getElementById('diver');
+    const speech  = document.getElementById('speech');
+
+    // Skift til den animerede GIF (starter animationen)
+    kiste.src = 'images/skattekiste.gif';
+
+    // Skjul "Tryk her"
+    if (label){
+      label.classList.add('fade-out');
+      setTimeout(() => (label.style.display = 'none'), 600);
+    }
+
+    // Når GIF'en forventes at være færdig → vis succes-tekst og dykker animation
+    setTimeout(() => {
+      success?.classList.add('show');   // "GODT KLARET!!!" i boblen
+      diver?.classList.add('show');     // dykkeren slider ned
+
+      // Vis taleboblen en anelse efter, så det føles sekventielt
+      setTimeout(() => {
+        speech?.classList.add('show');
+      }, 350);
+    }, GIF_DURATION_MS);
+  }
+
+    // Skift billedet til GIF’en (starter animation)
+    kiste.src = 'images/skattekiste.gif';
+
+    // Fade teksten ud
+    label.classList.add('fade-out');
+    setTimeout(() => {
+      label.style.display = 'none';
+    }, 1000);
+  }
+
+  
+  
+</script>
+
+<!-- Link til ekstern JavaScript -->
+<script src="kiste.js" defer></script>
+
+</body>
+</html>

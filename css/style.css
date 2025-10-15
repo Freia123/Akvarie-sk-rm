@@ -60,7 +60,7 @@ h1{
 }
 
 h2{
-    font-family: "intim";
+    font-family: "quicksand";
     font-size: 2rem;
     font-weight: 300;
     color: var(--Moonlightwhite);
@@ -108,35 +108,35 @@ p{
 /* Gør GIF-billederne placeret */
 .placeret-gif1 {
   position: absolute;
-  top: 620px;
-  left: 50px;
+  bottom: 10px;
+  left: 1%;
   width: 130px;
 }
 
 .placeret-gif2 {
   position: absolute;
-  top: 530px;
-  left: 130px;
+  bottom: 0px;
+  left: 6%;
   width: 160px;
 }
 
 .placeret-gif3 {
   position: absolute;
-  top: 710px;
-  left: 250px;
+  bottom:  40px;
+  left: 14%;
   width: 120px;
 }
 
 .placeret-gif4 {
   position: absolute;
-  top: 620px;
-  left: 1180px;
+  bottom: 10px;
+  left: 82%;
   width: 150px;
 }
 
 .placeret-gif5 {
   position: absolute;
-  top: 480px;
-  left: 1310px;
+  bottom: 20px;
+  left: 90%;
   width: 130px;
 }

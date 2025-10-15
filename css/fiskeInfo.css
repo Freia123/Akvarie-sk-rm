@@ -1,3 +1,4 @@
+
 /* Grøn kommentar: Fjerner margin/padding og sætter højden til 100% for at sikre, at baggrunden fylder hele siden */
 
 html, body {
@@ -60,7 +61,7 @@ margin-right:auto;
 
 /* Grøn kommentar: Udseende for underoverskrifter */
 h2{
-font-family: "intim";
+font-family: "quicksand";
 font-size: 2rem;
 font-weight: 300;
 color: var(--Moonlightwhite);
@@ -74,27 +75,79 @@ font-weight: 300;
 color: var(--Moonlightwhite);
 }
 
-
-
-
 .tekst1 {
+/* Glider kun lodret ind fra oven, uden at flytte sig horisontalt */
+position: relative;
+z-index: 20;
 max-width: 500px;
-margin: 2rem auto 2rem auto;
+margin-left: 28vw;
+margin-top: 4rem;
+
 text-align: center;
+
+transform: translateY(-100%);
+animation: tekstNed 2.5s cubic-bezier(0.7,0,0.3,1) forwards;
 }
 
-.billede1 {
-max-width: 800px;
-margin-left: 8vw;
-margin-top: 8rem;
+@keyframes tekstNed {
+from {
+transform: translate(50vw, -40vh);
+opacity: 0;
+}
+to {
+transform: translate(0, -1vh);
+opacity: 1;
+}
 }
 
 @media (max-width: 700px) {
+
 .tekst1 {
 max-width: 100%;
-margin: 1rem 0 0 0;
+margin-left: 0;
+margin-top: 1rem;
 }
+}
+
+
 .billede1 {
+max-width: 1000px;
+margin-left: 12vw;
+margin-top: 3rem;
+}
+
+
+
+.billede2 {
+position: absolute;
+top: 0;
+right: -100px;
+width: 1300px;
+max-width: 100vw;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+/* Startposition for animation: 5% udenfor rammen for oven */
+transform: translate(0, -5%);
+animation: dykkerInd 2.5s cubic-bezier(0.7,0,0.3,1) forwards;
+z-index: 10;
+}
+
+/* Dykkeren starter fra midten/toppen og glider til næsten top i højre side */
+@keyframes dykkerInd {
+from {
+transform: translate(50vw, -40vh);
+opacity: 0;
+}
+to {
+transform: translate(0, -1vh);
+opacity: 1;
+}
+}
+
+@media (max-width: 700px) {
+
+.billede2 {
 max-width: 100%;
 margin-left: 0;
 margin-top: 1rem;

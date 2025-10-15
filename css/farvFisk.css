@@ -57,7 +57,7 @@ h1{
 }
 
 h2{
-    font-family: "intim";
+    font-family: "quicksand";
     font-size: 2rem;
     font-weight: 300;
     color: var(--Moonlightwhite);
@@ -128,7 +128,7 @@ fiskWrapper {
     bottom: 50px;            /* afstand under fisken */
     left: 50%;                /* start i midten af containeren */
     transform: translateX(-50%); /* flyt den tilbage halvdelen af egen bredde = perfekt centreret under fisken */
-    width: 700px;
+    width: 38%;
     height: auto;
 }
 

@@ -62,50 +62,61 @@ height: px;
   font-family: quicksand;
 }
 
-.Dykkermand{
-position: absolute;
-top: 0;
-right: -100px;
-width: 1300px;
-max-width: 100vw;
-display: flex;
-justify-content: flex-end;
-align-items: center;
-/* Startposition for animation: 5% udenfor rammen for oven */
+/* Dykkermand container */
+.Dykkermand {
+  position: absolute;
+  top: 30%;          
+  right: -15vw;      /* starter lidt udenfor */
+  width: 20vw;
+  max-width: 250px;
+  transform: translateY(-50%);
+  opacity: 0;
+  z-index: 10;
+  transition: right 2s cubic-bezier(0.7,0,0.3,1), opacity 2s;
 }
 
+/* Glide-ind endeposition */
+.Dykkermand.show {
+  right: 10vw;
+  opacity: 1;
+}
 
-.speech{
+/* Talebobbel RELATIV TIL DYKKERMAND */
+.Dykkermand .speech {
   position: absolute;
-  left: 650px;  /* til venstre for dykkeren */
-  top: 50px;
+  bottom: 80%;       /* lidt over billedet, justér så det passer til munden */
+  left: 50%;         /* centrer horisontalt på dykkermand */
+  transform: translateX(-50%);
   background: #fff;
   color: #207cd2;
   font-weight: 800;
-  font-size: 30px;
-  padding: 8px 12px;
-  border-radius: 14px;
+  font-size: 1.5rem;
+  font-family: "Quicksand", sans-serif;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
   box-shadow: 0 10px 18px rgba(0,0,0,.2);
   white-space: nowrap;
-  opacity: 1;
-  transform: scale(.9);
-  transition: opacity .35s ease, transform .35s ease;
-  z-index: 4;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 11;
 }
-.speech::after{
+
+.Dykkermand .speech::after {
   content: "";
   position: absolute;
-  right: -10px;
-  top: 50%;
-  transform: translateY(-50%);
-  border-left: 10px solid #fff;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
+  bottom: -10px;   /* pilen peger nedad mod mund */
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid #fff;
 }
-.speech.show{
+
+.Dykkermand .speech.show {
   opacity: 1;
   transform: scale(1);
 }
+
 
 /* Responsivt tweak */
 @media (max-width: 700px){
@@ -130,4 +141,15 @@ max-width: 100%;
 margin-left: 0;
 margin-top: 1rem;
 }
+}
+
+.tilbageKnap {
+    position: absolute;
+    left: 10px;           /* afstand fra venstre kant */
+    top: 50%;             /* midt på y-aksen */
+    transform: translateY(-50%);
+    width: 100px;          /* juster størrelsen efter behov */
+    height: auto;
+    cursor: pointer;      /* viser at den kan klikkes */
+    z-index: 10;
 }

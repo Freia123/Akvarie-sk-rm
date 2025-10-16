@@ -24,9 +24,20 @@ function startgif(){
     setTimeout(()=>label.style.display='none', 600);
   }
 
-  // når kisten forventes åben → dykker ind, derefter taleboblen
-  setTimeout(()=>{
-    diver?.classList.add('show');
-    setTimeout(()=> speech?.classList.add('show'), 600);
-  }, GIF_DURATION_MS);
-}
+const DYKKER_DURATION_MS = 2000; // glide-ind varighed
+
+window.addEventListener('load', () => {
+    const diver  = document.getElementById('diver');
+    const speech = document.getElementById('speech');
+
+    // start glide-ind straks (eller fx 0,1-0,2s efter load)
+    setTimeout(() => {
+        diver.classList.add('show');
+
+        // vis talebobbel når han er færdig
+        setTimeout(() => {
+            speech.classList.add('show');
+        }, DYKKER_DURATION_MS);
+
+    }, 100); // 0,1s efter load
+});

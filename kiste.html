@@ -29,9 +29,12 @@
     <!-- Dykkermand + talebobbel -->
     <div class="Dykkermand" id="diver">
         <img src="images/dykkermand.png" alt="Dykkermand">
-        <div class="speech" id="speech">Godt arbejde!</div>
+        <div class="speech" id="speech">Godt klaret!</div>
     </div>
 </div>
+
+<!-- Tilføj dette audio-element (placer hvor som helst i body) -->
+<audio id="kisteLyd" src="images/GodtKlaret.mp3" preload="auto"></audio>
 
 <script>
 const DYKKER_DURATION_MS = 2000; // 2 sek glide-ind
@@ -58,6 +61,13 @@ function startgif(){
 
     // Start GIF
     if(kiste) kiste.src = 'images/skattekiste.gif';
+
+    // Afspil lyd (klik er en brugerhandling, så play() må normalt være tilladt)
+    const lyd = document.getElementById('kisteLyd');
+    if(lyd){
+        lyd.currentTime = 0;
+        lyd.play().catch(()=>{ /* ignore hvis browser blokerer */ });
+    }
 
     // Fade "Tryk her" væk
     if(label){

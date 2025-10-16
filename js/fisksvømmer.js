@@ -89,6 +89,7 @@ mad: "Små krebsdyr og fisk",
 fun_fact: "Ungerne har et helt andet mønster end de voksne – de skifter farve med alderen."
 }
 ];
+
 // Gør alle billeder med data-navn klikbare
 document.querySelectorAll('img[data-navn]').forEach(img => {
 img.style.cursor = 'pointer';
@@ -131,3 +132,4 @@ window.location.href = 'kongeFebars.html';
 // Gør intet hvis fisken ikke har en dedikeret side
 });
 });
+
